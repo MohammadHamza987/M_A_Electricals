@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
   <title>M.A.Electricals - Your Trusted Electrical Store</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -185,6 +181,19 @@
         font-size: 2rem;
       }
     }
+
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #16a34a;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
+      z-index: 9999;
+    }
   </style>
 </head>
 
@@ -199,6 +208,8 @@
     </nav>
   </header>
 
+  <div class="toast" id="toast">Added to cart!</div>
+
   <section class="hero">
     <h2>Your Trusted Electrical Store</h2>
     <p>Modern, reliable electricals in the heart of Lucknow.</p>
@@ -208,55 +219,74 @@
   <section class="products" id="products">
     <h3>Featured Products</h3>
     <div class="product-grid">
-  <div class="product" data-aos="fade-up">
-    <img src="./images/61htYg6TZiL.jpg" alt="LED Bulb" />
-    <div class="product-content">
-      <h4>LED Bulb</h4>
-      <p>₹120</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
+      <div class="product" data-aos="fade-up">
+        <img src="./images/61htYg6TZiL.jpg" alt="LED Bulb" />
+        <div class="product-content">
+          <h4>LED Bulb</h4>
+          <p>₹120</p>
+          <button onclick="addToCart('LED Bulb', 120)">Add to Cart</button>
+        </div>
+      </div>
 
-  <div class="product" data-aos="fade-up" data-aos-delay="100">
-    <img src="./images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif" alt="Ceiling Fan" />
-    <div class="product-content">
-      <h4>Ceiling Fan</h4>
-      <p>₹1450</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
+      <div class="product" data-aos="fade-up" data-aos-delay="100">
+        <img src="./images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif" alt="Ceiling Fan" />
+        <div class="product-content">
+          <h4>Ceiling Fan</h4>
+          <p>₹1450</p>
+          <button onclick="addToCart('Ceiling Fan', 1450)">Add to Cart</button>
+        </div>
+      </div>
 
-  <div class="product" data-aos="fade-up" data-aos-delay="200">
-    <img src="./images/Switchboards.avif" alt="Switchboard" />
-    <div class="product-content">
-      <h4>Switchboards</h4>
-      <p>₹300</p>
-      <button>Add to Cart</button>
-    </div>
-  </div>
+      <div class="product" data-aos="fade-up" data-aos-delay="200">
+        <img src="./images/Switchboards.avif" alt="Switchboard" />
+        <div class="product-content">
+          <h4>Switchboards</h4>
+          <p>₹300</p>
+          <button onclick="addToCart('Switchboard', 300)">Add to Cart</button>
+        </div>
+      </div>
 
-  <div class="product" data-aos="fade-up" data-aos-delay="300">
-    <img src="./images/Wires.webp" alt="Wires" />
-    <div class="product-content">
-      <h4>Electrical Wires</h4>
-      <p>₹550</p>
-      <button>Add to Cart</button>
+      <div class="product" data-aos="fade-up" data-aos-delay="300">
+        <img src="./images/Wires.webp" alt="Wires" />
+        <div class="product-content">
+          <h4>Electrical Wires</h4>
+          <p>₹550</p>
+          <button onclick="addToCart('Electrical Wires', 550)">Add to Cart</button>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-    
   </section>
 
   <footer>
     <p>&copy; 2025 M.A.Electricals. All rights reserved.</p>
   </footer>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-</body>
 
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    function addToCart(name, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      showToast();
+    }
+
+    function showToast() {
+      const toast = document.getElementById("toast");
+      toast.style.display = "block";
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 2000);
+    }
+  </script>
+</body>
 </html>
