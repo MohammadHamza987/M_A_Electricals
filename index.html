@@ -38,7 +38,16 @@
       color: #222;
     }
 
-    nav a {
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .nav-links a {
       margin-left: 1.2rem;
       text-decoration: none;
       color: #444;
@@ -46,8 +55,52 @@
       transition: 0.3s ease;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: #f97316;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: 1rem;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: #333;
+      margin: 4px 0;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background: white;
+        flex-direction: column;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        z-index: 999;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 1rem;
+        border-bottom: 1px solid #eee;
+        margin: 0;
+      }
+
+      .hamburger {
+        display: flex;
+      }
     }
 
     .hero {
@@ -200,11 +253,20 @@
 <body>
   <header>
     <h1>⚡ M.A.Electricals</h1>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
-      <a href="#">Home</a>
-      <a href="./pages/productdetail.html">Products</a>
-      <a href="./pages/ContactUs.html">Contact</a>
-      <a href="./pages/cart.html">🛒 Cart</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="./pages/productdetail.html">Products</a>
+        <a href="./pages/ContactUs.html">Contact</a>
+        <a href="./pages/cart.html">🛒 Cart</a>
+      </div>
     </nav>
   </header>
 
@@ -286,6 +348,11 @@
       setTimeout(() => {
         toast.style.display = "none";
       }, 2000);
+    }
+
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
     }
   </script>
 </body>

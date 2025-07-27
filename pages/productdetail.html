@@ -11,12 +11,13 @@
       margin: 0;
       font-family: 'Roboto', sans-serif;
       background-color: #f9f9f9;
+      overflow-x: hidden;
     }
 
     /* Navbar */
     .navbar {
       background-color: #222;
-      padding: 15px 30px;
+      padding: 15px 20px;
       color: #fff;
       display: flex;
       justify-content: space-between;
@@ -27,31 +28,76 @@
     }
 
     .navbar h2 {
-      margin: 0;
       font-size: 1.4rem;
+      margin: 0;
     }
 
-    .navbar a {
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav-links a {
       color: #fff;
-      margin-left: 20px;
       text-decoration: none;
       font-size: 1rem;
     }
 
-    .navbar a:hover {
+    .nav-links a:hover {
       text-decoration: underline;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      width: 22px;
+      background: #fff;
+      margin: 3px 0;
+      border-radius: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #333;
+        flex-direction: column;
+        border-radius: 8px;
+        overflow: hidden;
+        z-index: 999;
+      }
+
+      .nav-links a {
+        padding: 10px 15px;
+        border-bottom: 1px solid #444;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
     }
 
     h1 {
       text-align: center;
       margin: 30px 0 10px;
       color: #333;
+      font-size: 2rem;
     }
 
     .product-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
       padding: 20px;
     }
@@ -60,7 +106,6 @@
       background-color: #fff;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      width: 250px;
       padding: 20px;
       text-align: center;
       transition: transform 0.3s ease;
@@ -139,7 +184,12 @@
   <!-- Navbar -->
   <div class="navbar">
     <h2>M.A.Electricals</h2>
-    <div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
       <a href="../index.html">Home</a>
       <a href="cart.html">Cart</a>
       <a href="ContactUs.html">Contact</a>
@@ -169,7 +219,7 @@
             <div class="quantity-container">
               Qty: <input type="number" id="qty-${index}" value="1" min="1">
             </div>
-            <button class="add-btn" onclick="addToCart(${index})">Add to Cart</button>
+            <button class="add-btn" onclick="addToCart(${index}, '${product.name}', ${product.price})">Add to Cart</button>
           `;
           grid.appendChild(card);
         });
@@ -179,14 +229,18 @@
       }
     }
 
-    function addToCart(index) {
+    function addToCart(index, name, price) {
       const qty = parseInt(document.getElementById(`qty-${index}`).value);
-      // Store in localStorage (optional logic for cart)
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const productName = document.querySelectorAll('.product-name')[index].textContent;
-      cart.push({ name: productName, quantity: qty });
-      localStorage.setItem("cart", JSON.stringify(cart));
+      const existing = cart.find(item => item.name === name);
 
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({ name, price, quantity: qty });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
       showToast("✅ Added to cart");
     }
 
@@ -197,6 +251,11 @@
       setTimeout(() => {
         toast.style.display = "none";
       }, 2000);
+    }
+
+    function toggleMenu() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.classList.toggle("show");
     }
 
     loadProducts();
