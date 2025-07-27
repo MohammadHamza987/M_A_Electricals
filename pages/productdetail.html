@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Details - M.A.Electricals</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #222;
+      padding: 15px 30px;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .navbar a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0 10px;
+      color: #333;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+
+    .product-name {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #222;
+    }
+
+    .product-price {
+      font-size: 1rem;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .quantity-container {
+      margin-bottom: 15px;
+    }
+
+    .quantity-container input {
+      width: 60px;
+      padding: 5px;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+
+    .add-btn {
+      background-color: #ff6600;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .add-btn:hover {
+      background-color: #e55d00;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #28a745;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: none;
+      font-size: 0.95rem;
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <h2>M.A.Electricals</h2>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+
+  <h1>Our Products</h1>
+  <div class="product-grid" id="productGrid"></div>
+
+  <div class="toast" id="toast">Added to cart successfully!</div>
+
+  <script>
+    async function loadProducts() {
+      try {
+        const response = await fetch('../data/products.json');
+        const products = await response.json();
+        const grid = document.getElementById('productGrid');
+
+        products.forEach((product, index) => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+
+          card.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <div class="product-name">${product.name}</div>
+            <div class="product-price">₹${product.price}</div>
+            <div class="quantity-container">
+              Qty: <input type="number" id="qty-${index}" value="1" min="1">
+            </div>
+            <button class="add-btn" onclick="addToCart(${index})">Add to Cart</button>
+          `;
+          grid.appendChild(card);
+        });
+      } catch (error) {
+        document.getElementById('productGrid').innerHTML = "<p>⚠️ Failed to load products.</p>";
+        console.error("Fetch error:", error);
+      }
+    }
+
+    function addToCart(index) {
+      const qty = parseInt(document.getElementById(`qty-${index}`).value);
+      // Store in localStorage (optional logic for cart)
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const productName = document.querySelectorAll('.product-name')[index].textContent;
+      cart.push({ name: productName, quantity: qty });
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      showToast("✅ Added to cart");
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById("toast");
+      toast.innerText = message;
+      toast.style.display = "block";
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 2000);
+    }
+
+    loadProducts();
+  </script>
+</body>
+</html>

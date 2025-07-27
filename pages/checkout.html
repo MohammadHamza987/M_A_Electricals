@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout - M.A.Electricals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+    })();
+  </script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f6fa;
+      margin: 0;
+      padding: 0;
+    }
+    .checkout-container {
+      max-width: 800px;
+      margin: 4rem auto;
+      background: #fff;
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .summary {
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #ccc;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+    form button {
+      margin-top: 2rem;
+      width: 100%;
+      padding: 1rem;
+      background-color: #007bff;
+      color: #fff;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="checkout-container">
+    <h1>Checkout</h1>
+    <div class="summary">
+      <h3>Order Summary:</h3>
+      <div id="summary-items"></div>
+      <h3>Total: <span id="summary-total">₹0</span></h3>
+    </div>
+
+    <form id="checkout-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="address">Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  <script>
+    function getCartItems() {
+      return JSON.parse(localStorage.getItem('cart')) || [];
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+    }
+
+    const cart = getCartItems();
+    const itemsDiv = document.getElementById('summary-items');
+    const totalDiv = document.getElementById('summary-total');
+    let total = 0;
+    let summaryText = '';
+
+    cart.forEach(item => {
+      const line = document.createElement('p');
+      const itemText = `${item.name} (x${item.quantity}) - ₹${item.price * item.quantity}`;
+      line.textContent = itemText;
+      itemsDiv.appendChild(line);
+      total += item.price * item.quantity;
+      summaryText += itemText + '\n';
+    });
+
+    totalDiv.textContent = `₹${total}`;
+    summaryText += `\nTotal: ₹${total}`;
+
+    document.getElementById('checkout-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const templateParams = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        address: document.getElementById('address').value,
+        order_details: summaryText,
+      };
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", templateParams)
+        .then(() => {
+          alert("Order placed and confirmation email sent!");
+          clearCart();
+          window.location.href = "./pages/orderconfirmation.html";
+        }, (error) => {
+          console.error("EmailJS error:", error);
+          alert("Order placed but failed to send confirmation email.");
+          window.location.href = "./pages/orderconfirmation.html";
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Ceiling Fan - Bajaj Maxima",
+    "price": 1450,
+    "image": "images/fan1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Ceiling Fan - Crompton Aura",
+    "price": 1799,
+    "image": "images/fan2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "LED Bulb - Philips 12W",
+    "price": 150,
+    "image": "images/bulb1.jpg"
+  },
+  {
+    "id": 4,
+    "name": "LED Tube Light - Wipro 20W",
+    "price": 280,
+    "image": "images/tube1.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Anchor Switchboard 3 Socket",
+    "price": 230,
+    "image": "images/switch1.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Modular Switchboard - Havells",
+    "price": 450,
+    "image": "images/switch2.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Electric Wire - Finolex 90m",
+    "price": 1450,
+    "image": "images/wire1.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Electric Cable - Polycab 1.5 sqmm",
+    "price": 960,
+    "image": "images/wire2.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Extension Board - 4 Socket",
+    "price": 320,
+    "image": "images/board1.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Electric Tester - Taparia",
+    "price": 80,
+    "image": "images/tester1.jpg"
+  },
+  {
+    "id": 11,
+    "name": "Table Fan - Usha Mist Air",
+    "price": 1890,
+    "image": "images/fan3.jpg"
+  },
+  {
+    "id": 12,
+    "name": "Rechargeable LED Lantern",
+    "price": 999,
+    "image": "images/lantern1.jpg"
+  },
+  {
+    "id": 13,
+    "name": "Spike Guard 6 Socket",
+    "price": 420,
+    "image": "images/spike1.jpg"
+  },
+  {
+    "id": 14,
+    "name": "Electrical Tape - Black",
+    "price": 20,
+    "image": "images/tape1.jpg"
+  },
+  {
+    "id": 15,
+    "name": "LED Bulb - Syska 9W",
+    "price": 120,
+    "image": "images/bulb2.jpg"
+  },
+  {
+    "id": 16,
+    "name": "Modular Socket - GM",
+    "price": 115,
+    "image": "images/socket1.jpg"
+  },
+  {
+    "id": 17,
+    "name": "Conduit Pipe - 25mm",
+    "price": 75,
+    "image": "images/pipe1.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Circuit Breaker - Havells MCB",
+    "price": 430,
+    "image": "images/mcb1.jpg"
+  },
+  {
+    "id": 19,
+    "name": "MCB Box - 4 Way",
+    "price": 630,
+    "image": "images/mcbbox1.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Wire Stripper Tool",
+    "price": 270,
+    "image": "images/stripper1.jpg"
+  },
+  {
+    "id": 21,
+    "name": "Smart Plug - 10A WiFi",
+    "price": 1550,
+    "image": "images/smartplug1.jpg"
+  },
+  {
+    "id": 22,
+    "name": "LED Panel Light - 12W",
+    "price": 420,
+    "image": "images/panel1.jpg"
+  },
+  {
+    "id": 23,
+    "name": "Mini Inverter - Luminous",
+    "price": 3590,
+    "image": "images/inverter1.jpg"
+  },
+  {
+    "id": 24,
+    "name": "Electric Choke - Copper",
+    "price": 150,
+    "image": "images/choke1.jpg"
+  },
+  {
+    "id": 25,
+    "name": "Fan Regulator - Anchor",
+    "price": 130,
+    "image": "images/regulator1.jpg"
+  },
+  {
+    "id": 26,
+    "name": "Light Holder - B22",
+    "price": 45,
+    "image": "images/holder1.jpg"
+  },
+  {
+    "id": 27,
+    "name": "Soldering Iron - 60W",
+    "price": 310,
+    "image": "images/solder1.jpg"
+  },
+  {
+    "id": 28,
+    "name": "Digital Multimeter",
+    "price": 1250,
+    "image": "images/multimeter1.jpg"
+  },
+  {
+    "id": 29,
+    "name": "Insulated Gloves - Electric Safe",
+    "price": 220,
+    "image": "images/glove1.jpg"
+  },
+  {
+    "id": 30,
+    "name": "Electrical Screwdriver Kit",
+    "price": 580,
+    "image": "images/screwkit1.jpg"
+  }
+]

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - M.A.Electricals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #eef2f7, #f8fbff);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .contact-container {
+      max-width: 700px;
+      width: 100%;
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 25px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-container:hover {
+      transform: scale(1.01);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 2rem;
+      color: #007bff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      display: block;
+      color: #333;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      background: #f9fcff;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #007bff;
+      outline: none;
+      background: #fff;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      padding: 1rem;
+      font-size: 1rem;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+    }
+
+    .contact-info {
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #e0e0e0;
+      font-size: 0.95rem;
+      color: #444;
+    }
+
+    .contact-info p {
+      margin: 0.4rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="contact-container">
+    <h1>Contact Us</h1>
+    <form onsubmit="submitForm(event)">
+      <div>
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div>
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>📍 Store Location:</strong> Lucknow, India</p>
+      <p><strong>📧 Email:</strong> support@maelectricals.com</p>
+      <p><strong>📞 Phone:</strong> +91 8787201340</p>
+    </div>
+  </div>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      alert(`Thank you, ${name}! Your message has been sent.`);
+      e.target.reset();
+    }
+  </script>
+</body>
+
+</html>

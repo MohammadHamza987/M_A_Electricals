@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <title>M.A.Electricals - Your Trusted Electrical Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      background-color: #f2f4f8;
+      color: #1a1a1a;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    header h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #222;
+    }
+
+    nav a {
+      margin-left: 1.2rem;
+      text-decoration: none;
+      color: #444;
+      font-weight: 500;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f97316;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #fef9f3, #fdf1d5);
+      padding: 5rem 2rem;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #1f1f1f;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: #555;
+    }
+
+    .hero a {
+      background-color: #f97316;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero a:hover {
+      background-color: #ea580c;
+    }
+
+    .products {
+      padding: 4rem 2rem;
+    }
+
+    .products h3 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .product {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+    }
+
+    .product img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+    }
+
+    .product-content {
+      padding: 1.2rem;
+    }
+
+    .product-content h4 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-content p {
+      color: #666;
+      margin-bottom: 0.8rem;
+      font-weight: 500;
+    }
+
+    .product-content button {
+      background-color: #f97316;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .product-content button:hover {
+      background-color: #ea580c;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 5rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .products h3 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>⚡ M.A.Electricals</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="./pages/productdetail.html">Products</a>
+      <a href="./pages/ContactUs.html">Contact</a>
+      <a href="./pages/cart.html">🛒 Cart</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Your Trusted Electrical Store</h2>
+    <p>Modern, reliable electricals in the heart of Lucknow.</p>
+    <a href="#products">Explore Products</a>
+  </section>
+
+  <section class="products" id="products">
+    <h3>Featured Products</h3>
+    <div class="product-grid">
+  <div class="product" data-aos="fade-up">
+    <img src="./images/61htYg6TZiL.jpg" alt="LED Bulb" />
+    <div class="product-content">
+      <h4>LED Bulb</h4>
+      <p>₹120</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product" data-aos="fade-up" data-aos-delay="100">
+    <img src="./images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif" alt="Ceiling Fan" />
+    <div class="product-content">
+      <h4>Ceiling Fan</h4>
+      <p>₹1450</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product" data-aos="fade-up" data-aos-delay="200">
+    <img src="./images/Switchboards.avif" alt="Switchboard" />
+    <div class="product-content">
+      <h4>Switchboards</h4>
+      <p>₹300</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="product" data-aos="fade-up" data-aos-delay="300">
+    <img src="./images/Wires.webp" alt="Wires" />
+    <div class="product-content">
+      <h4>Electrical Wires</h4>
+      <p>₹550</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+</div>
+    
+  </section>
+
+  <footer>
+    <p>&copy; 2025 M.A.Electricals. All rights reserved.</p>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+</body>
+
+</html>
