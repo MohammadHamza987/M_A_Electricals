@@ -3,10 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M.A.Electricals - Your Trusted Electrical Store</title>
+  <title>M.A.Electricals - Your Trusted Electrical Store in Lucknow</title>
+  <meta name="description" content="M.A.Electricals - Premium electrical products, switches, fans, LED bulbs, wires and more. Serving Lucknow with quality electrical supplies since years.">
+  <meta name="keywords" content="electrical store, LED bulbs, ceiling fans, switches, wires, electrical supplies, Lucknow">
+  <meta name="author" content="M.A.Electricals">
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="M.A.Electricals - Your Trusted Electrical Store">
+  <meta property="og:description" content="Quality electrical products in Lucknow. LED bulbs, fans, switches, wires and more.">
+  <meta property="og:type" content="website">
+  
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
+    :root {
+      --primary-color: #f97316;
+      --primary-dark: #ea580c;
+      --secondary-color: #1f2937;
+      --success-color: #16a34a;
+      --warning-color: #f59e0b;
+      --danger-color: #dc2626;
+      --light-bg: #f8fafc;
+      --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --border-radius: 16px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -15,27 +38,51 @@
 
     body {
       font-family: 'Manrope', sans-serif;
-      background-color: #f2f4f8;
+      background-color: var(--light-bg);
       color: #1a1a1a;
       overflow-x: hidden;
+      line-height: 1.6;
     }
 
+    /* Header Improvements */
     header {
-      background-color: #fff;
-      padding: 1.2rem 2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(249, 115, 22, 0.1);
     }
 
-    header h1 {
-      font-size: 1.7rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
       font-weight: 700;
-      color: #222;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .logo i {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     nav {
@@ -45,18 +92,67 @@
 
     .nav-links {
       display: flex;
+      gap: 2rem;
     }
 
     .nav-links a {
-      margin-left: 1.2rem;
       text-decoration: none;
-      color: #444;
+      color: #374151;
       font-weight: 500;
-      transition: 0.3s ease;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: var(--transition);
+      position: relative;
     }
 
     .nav-links a:hover {
-      color: #f97316;
+      color: var(--primary-color);
+      background-color: rgba(249, 115, 22, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .cart-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-color);
+      color: white !important;
+      border-radius: 25px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+      position: relative;
+    }
+
+    .cart-link:hover {
+      background: var(--primary-dark) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--danger-color);
+      color: white;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      animation: bounce 0.5s ease;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 53%, 80%, 100% { transform: translate3d(0,0,0); }
+      40%, 43% { transform: translate3d(0,-30px,0); }
+      70% { transform: translate3d(0,-15px,0); }
+      90% { transform: translate3d(0,-4px,0); }
     }
 
     .hamburger {
@@ -64,195 +160,499 @@
       flex-direction: column;
       cursor: pointer;
       margin-left: 1rem;
+      padding: 0.5rem;
+      border-radius: 8px;
+      transition: var(--transition);
+    }
+
+    .hamburger:hover {
+      background-color: rgba(249, 115, 22, 0.1);
     }
 
     .hamburger span {
       height: 3px;
       width: 25px;
       background: #333;
-      margin: 4px 0;
-      border-radius: 4px;
+      margin: 3px 0;
+      border-radius: 3px;
+      transition: var(--transition);
     }
 
+    /* Mobile Navigation */
     @media (max-width: 768px) {
+      header {
+        padding: 1rem;
+      }
+
       .nav-links {
         display: none;
         position: absolute;
-        top: 70px;
-        right: 20px;
+        top: 100%;
+        right: 1rem;
         background: white;
         flex-direction: column;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
+        box-shadow: var(--card-shadow);
+        border-radius: var(--border-radius);
         overflow: hidden;
         z-index: 999;
+        min-width: 200px;
+        gap: 0;
       }
 
       .nav-links.show {
         display: flex;
+        animation: slideDown 0.3s ease;
+      }
+
+      @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
       }
 
       .nav-links a {
-        padding: 1rem;
-        border-bottom: 1px solid #eee;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid #f1f5f9;
         margin: 0;
+        border-radius: 0;
+      }
+
+      .nav-links a:last-child {
+        border-bottom: none;
       }
 
       .hamburger {
         display: flex;
       }
+
+      .logo h1 {
+        font-size: 1.5rem;
+      }
     }
 
+    /* Enhanced Hero Section */
     .hero {
-      background: linear-gradient(135deg, #fef9f3, #fdf1d5);
-      padding: 5rem 2rem;
+      background: linear-gradient(135deg, #fef7ed 0%, #fed7aa 50%, #fdba74 100%);
+      padding: 6rem 2rem;
       text-align: center;
-      animation: fadeIn 1.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23f97316" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23ea580c" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .hero h2 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      color: #1f1f1f;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: #1f2937;
+      line-height: 1.2;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      color: #555;
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      color: #4b5563;
+      font-weight: 400;
+      line-height: 1.6;
     }
 
-    .hero a {
-      background-color: #f97316;
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
+      padding: 1rem 2rem;
+      border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
-      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+      border: none;
+      cursor: pointer;
     }
 
-    .hero a:hover {
-      background-color: #ea580c;
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(249, 115, 22, 0.4);
     }
 
+    .cta-button i {
+      font-size: 1.2rem;
+    }
+
+    /* Features Section */
+    .features {
+      padding: 5rem 2rem;
+      background: white;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      transition: var(--transition);
+      border: 1px solid rgba(249, 115, 22, 0.1);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--card-shadow);
+      border-color: rgba(249, 115, 22, 0.2);
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      color: white;
+      font-size: 2rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+
+    .feature-card p {
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    /* Enhanced Products Section */
     .products {
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
+      background: var(--light-bg);
+    }
+
+    .products-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .products h3 {
-      font-size: 2.5rem;
-      margin-bottom: 2.5rem;
-      text-align: center;
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+
+    .products-subtitle {
+      font-size: 1.1rem;
+      color: #6b7280;
+      margin-bottom: 2rem;
     }
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .product {
-      background: #fff;
-      border-radius: 16px;
+      background: white;
+      border-radius: var(--border-radius);
       overflow: hidden;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
     }
 
     .product:hover {
-      transform: scale(1.03);
+      transform: translateY(-8px);
+      box-shadow: var(--card-shadow);
+      border-color: rgba(249, 115, 22, 0.2);
+    }
+
+    .product-image {
+      position: relative;
+      overflow: hidden;
+      height: 250px;
     }
 
     .product img {
       width: 100%;
-      height: 230px;
+      height: 100%;
       object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--primary-color);
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
     }
 
     .product-content {
-      padding: 1.2rem;
+      padding: 1.5rem;
     }
 
     .product-content h4 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
+      font-weight: 600;
       margin-bottom: 0.5rem;
+      color: #1f2937;
+      line-height: 1.3;
     }
 
-    .product-content p {
-      color: #666;
-      margin-bottom: 0.8rem;
-      font-weight: 500;
+    .product-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
     }
 
-    .product-content button {
-      background-color: #f97316;
+    .product-actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .add-to-cart-btn {
+      flex: 1;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: white;
       border: none;
-      padding: 0.6rem 1.2rem;
+      padding: 0.75rem 1.5rem;
       border-radius: 8px;
       font-weight: 600;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
-    .product-content button:hover {
-      background-color: #ea580c;
+    .add-to-cart-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3);
     }
 
+    .add-to-cart-btn:active {
+      transform: translateY(0);
+    }
+
+    .quick-view-btn {
+      background: white;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 0.75rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quick-view-btn:hover {
+      background: var(--primary-color);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* Toast Notifications */
+    .toast {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background: linear-gradient(135deg, var(--success-color), #15803d);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 10px 30px rgba(22, 163, 74, 0.3);
+      animation: slideInRight 0.3s ease;
+      min-width: 250px;
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .toast.show {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .toast i {
+      font-size: 1.2rem;
+    }
+
+    /* Enhanced Footer */
     footer {
-      background-color: #1f1f1f;
-      color: #fff;
-      text-align: center;
-      padding: 2rem;
+      background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+      color: #e5e7eb;
+      padding: 3rem 2rem 2rem;
       margin-top: 5rem;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-section h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      color: #9ca3af;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      display: block;
+      transition: var(--transition);
+    }
+
+    .footer-section a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #374151;
+      color: #9ca3af;
+    }
+
+    /* Loading States */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 4rem 1rem;
       }
 
-      to {
-        opacity: 1;
-        transform: translateY(0);
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .products h3 {
+        font-size: 2.2rem;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .features {
+        padding: 3rem 1rem;
+      }
+
+      .toast {
+        top: 1rem;
+        right: 1rem;
+        left: 1rem;
+        min-width: auto;
       }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 480px) {
       .hero h2 {
         font-size: 2rem;
       }
 
-      .hero p {
+      .cta-button {
+        padding: 0.875rem 1.5rem;
         font-size: 1rem;
       }
 
-      .products h3 {
-        font-size: 2rem;
+      .product-content {
+        padding: 1rem;
       }
-    }
-
-    .toast {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #16a34a;
-      color: white;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      display: none;
-      z-index: 9999;
     }
   </style>
 </head>
 
 <body>
   <header>
-    <h1>⚡ M.A.Electricals</h1>
+    <div class="logo">
+      <i class="fas fa-bolt"></i>
+      <h1>M.A.Electricals</h1>
+    </div>
 
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
@@ -262,98 +662,513 @@
 
     <nav>
       <div class="nav-links" id="navLinks">
-        <a href="#">Home</a>
-        <a href="./pages/productdetail.html">Products</a>
-        <a href="./pages/ContactUs.html">Contact</a>
-        <a href="./pages/cart.html">🛒 Cart</a>
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="./pages/productdetail.html"><i class="fas fa-box"></i> Products</a>
+        <a href="./pages/ContactUs.html"><i class="fas fa-phone"></i> Contact</a>
+        <a href="./pages/cart.html" class="cart-link">
+          <i class="fas fa-shopping-cart"></i> Cart
+          <span class="cart-count" id="cartCount" style="display: none;">0</span>
+        </a>
       </div>
     </nav>
   </header>
 
-  <div class="toast" id="toast">Added to cart!</div>
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span>Added to cart successfully!</span>
+  </div>
 
   <section class="hero">
-    <h2>Your Trusted Electrical Store</h2>
-    <p>Modern, reliable electricals in the heart of Lucknow.</p>
-    <a href="./pages/productdetail.html">Explore Products</a>
+    <div class="hero-content">
+      <h2>Your Trusted Electrical Store</h2>
+      <p>Premium quality electrical products, switches, fans, LED bulbs, wires and professional electrical solutions in the heart of Lucknow.</p>
+      <p>Proprietor: Mohammad Ahsan(Manager:Mohammad Hamza)</p>
+      <button class="cta-button" onclick="window.location.href='./pages/productdetail.html'">
+        <i class="fas fa-shopping-bag"></i>
+        Explore Products
+      </button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="features-grid">
+      <div class="feature-card" data-aos="fade-up">
+        <div class="feature-icon">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3>Premium Quality</h3>
+        <p>All our electrical products are sourced from trusted brands ensuring reliability and safety for your home and business.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon">
+          <i class="fas fa-shipping-fast"></i>
+        </div>
+        <h3>Fast Delivery</h3>
+        <p>Quick delivery across Lucknow with same-day shipping available for urgent electrical requirements.</p>
+      </div>
+      <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h3>Expert Support</h3>
+        <p>Professional technical support and installation guidance from our experienced electrical experts.</p>
+      </div>
+    </div>
   </section>
 
   <section class="products" id="products">
-    <h3>Featured Products</h3>
+    <div class="products-header">
+      <h3>Featured Products</h3>
+      <p class="products-subtitle">Discover our most popular electrical products with the best quality and competitive prices</p>
+    </div>
     <div class="product-grid">
       <div class="product" data-aos="fade-up">
-        <img src="./images/61htYg6TZiL.jpg" alt="LED Bulb" />
+        <div class="product-image">
+          <img src="./images/61htYg6TZiL.jpg" alt="Premium LED Bulb" />
+          <div class="product-badge">Popular</div>
+        </div>
         <div class="product-content">
-          <h4>LED Bulb</h4>
-          <p>₹120</p>
-          <button onclick="addToCart('LED Bulb', 120)">Add to Cart</button>
+          <h4>Premium LED Bulb</h4>
+          <div class="product-price">₹120</div>
+          <div class="product-actions">
+            <button class="add-to-cart-btn" onclick="addToCart('Premium LED Bulb', 120, './images/61htYg6TZiL.jpg')">
+              <i class="fas fa-cart-plus"></i>
+              Add to Cart
+            </button>
+            <button class="quick-view-btn" onclick="quickView('Premium LED Bulb', 120, './images/61htYg6TZiL.jpg')">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="product" data-aos="fade-up" data-aos-delay="100">
-        <img src="./images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif" alt="Ceiling Fan" />
+        <div class="product-image">
+          <img src="./images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif" alt="Premium Ceiling Fan" />
+          <div class="product-badge">Best Seller</div>
+        </div>
         <div class="product-content">
-          <h4>Ceiling Fan</h4>
-          <p>₹1450</p>
-          <button onclick="addToCart('Ceiling Fan', 1450)">Add to Cart</button>
+          <h4>Premium Ceiling Fan</h4>
+          <div class="product-price">₹1,450</div>
+          <div class="product-actions">
+            <button class="add-to-cart-btn" onclick="addToCart('Premium Ceiling Fan', 1450, './images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif')">
+              <i class="fas fa-cart-plus"></i>
+              Add to Cart
+            </button>
+            <button class="quick-view-btn" onclick="quickView('Premium Ceiling Fan', 1450, './images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif')">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="product" data-aos="fade-up" data-aos-delay="200">
-        <img src="./images/Switchboards.avif" alt="Switchboard" />
+        <div class="product-image">
+          <img src="./images/Switchboards.avif" alt="Modular Switchboards" />
+          <div class="product-badge">New</div>
+        </div>
         <div class="product-content">
-          <h4>Switchboards</h4>
-          <p>₹300</p>
-          <button onclick="addToCart('Switchboard', 300)">Add to Cart</button>
+          <h4>Modular Switchboards</h4>
+          <div class="product-price">₹300</div>
+          <div class="product-actions">
+            <button class="add-to-cart-btn" onclick="addToCart('Modular Switchboards', 300, './images/Switchboards.avif')">
+              <i class="fas fa-cart-plus"></i>
+              Add to Cart
+            </button>
+            <button class="quick-view-btn" onclick="quickView('Modular Switchboards', 300, './images/Switchboards.avif')">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
         </div>
       </div>
 
       <div class="product" data-aos="fade-up" data-aos-delay="300">
-        <img src="./images/Wires.webp" alt="Wires" />
+        <div class="product-image">
+          <img src="./images/Wires.webp" alt="Premium Electrical Wires" />
+          <div class="product-badge">Quality</div>
+        </div>
         <div class="product-content">
-          <h4>Electrical Wires</h4>
-          <p>₹550</p>
-          <button onclick="addToCart('Electrical Wires', 550)">Add to Cart</button>
+          <h4>Premium Electrical Wires</h4>
+          <div class="product-price">₹550</div>
+          <div class="product-actions">
+            <button class="add-to-cart-btn" onclick="addToCart('Premium Electrical Wires', 550, './images/Wires.webp')">
+              <i class="fas fa-cart-plus"></i>
+              Add to Cart
+            </button>
+            <button class="quick-view-btn" onclick="quickView('Premium Electrical Wires', 550, './images/Wires.webp')">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 M.A.Electricals. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>M.A.Electricals</h4>
+        <p>Your trusted partner for all electrical needs in Lucknow. Quality products, expert service, and competitive prices since years.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="./pages/productdetail.html">Products</a>
+        <a href="./pages/ContactUs.html">Contact Us</a>
+        <a href="./pages/cart.html">Shopping Cart</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact Info</h4>
+        <p><i class="fas fa-map-marker-alt"></i>Shadab Colony, Khurram Nagar Lucknow, Uttar Pradesh, India</p>
+        <p><i class="fas fa-phone"></i> +91-8787201340</p>
+        <p><i class="fas fa-envelope"></i> muhammadhamza124232@gmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h4>Business Hours</h4>
+        <p>Monday - Sunday: 10:00 AM - 9:00 PM</p>
+        <p>Wednesday: Closed</p>
+        <p>Emergency Service Available</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 M.A.Electricals. All rights reserved. | Designed with ❤️ for Lucknow</p>
+    </div>
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
+    // Initialize AOS animations
     AOS.init({
-      duration: 1000,
-      once: true
+      duration: 800,
+      once: true,
+      offset: 100
     });
 
-    function addToCart(name, price) {
-      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-      const existing = cart.find(item => item.name === name);
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ name, price, quantity: 1 });
+    // Enhanced cart functionality
+    function addToCart(name, price, image = '') {
+      try {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existing = cart.find(item => item.name === name);
+        
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ 
+            name: name, 
+            price: parseFloat(price), 
+            quantity: 1, 
+            image: image || '',
+            id: Date.now() + Math.random() // Add unique ID
+          });
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+        showToast(`${name} added to cart!`, 'success');
+        
+        // Add button loading state
+        const btn = event.target;
+        const originalContent = btn.innerHTML;
+        btn.innerHTML = '<div class="loading"></div> Adding...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+          btn.innerHTML = originalContent;
+          btn.disabled = false;
+        }, 800);
+        
+      } catch (error) {
+        showToast('Error adding item to cart', 'error');
+        console.error('Cart error:', error);
       }
-      localStorage.setItem('cart', JSON.stringify(cart));
-      showToast();
     }
 
-    function showToast() {
+    // Quick view functionality
+    function quickView(name, price, image) {
+      const modal = document.createElement('div');
+      modal.className = 'quick-view-modal';
+      modal.innerHTML = `
+        <div class="quick-view-content">
+          <button class="close-btn" onclick="closeQuickView()">&times;</button>
+          <div class="quick-view-image">
+            <img src="${image}" alt="${name}">
+          </div>
+          <div class="quick-view-details">
+            <h3>${name}</h3>
+            <div class="price">₹${price.toLocaleString()}</div>
+            <p>High-quality electrical product from trusted brands. Perfect for residential and commercial use.</p>
+            <div class="quick-view-actions">
+              <button class="add-to-cart-btn" onclick="addToCart('${name}', ${price}, '${image}'); closeQuickView();">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+              </button>
+              <button class="view-details-btn" onclick="window.location.href='./pages/productdetail.html'">
+                <i class="fas fa-info-circle"></i> View Details
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      document.body.appendChild(modal);
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      
+      // Add modal styles dynamically
+      if (!document.querySelector('#quick-view-styles')) {
+        const styles = document.createElement('style');
+        styles.id = 'quick-view-styles';
+        styles.textContent = `
+          .quick-view-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+          }
+          .quick-view-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            display: flex;
+            gap: 2rem;
+            padding: 2rem;
+            animation: slideUp 0.3s ease;
+          }
+          @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+          }
+          .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #666;
+            z-index: 1;
+          }
+          .quick-view-image {
+            flex: 1;
+          }
+          .quick-view-image img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+          }
+          .quick-view-details {
+            flex: 1;
+          }
+          .quick-view-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+          }
+          .quick-view-details .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+          }
+          .quick-view-details p {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+          }
+          .quick-view-actions {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+          }
+          .view-details-btn {
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+          }
+          .view-details-btn:hover {
+            background: var(--primary-color);
+            color: white;
+          }
+          @media (max-width: 768px) {
+            .quick-view-content {
+              flex-direction: column;
+              max-width: 90%;
+              padding: 1.5rem;
+            }
+          }
+        `;
+        document.head.appendChild(styles);
+      }
+    }
+
+    function closeQuickView() {
+      const modal = document.querySelector('.quick-view-modal');
+      if (modal) {
+        modal.remove();
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Enhanced toast notifications
+    function showToast(message, type = 'success') {
       const toast = document.getElementById("toast");
-      toast.style.display = "block";
+      const icon = type === 'success' ? 'fas fa-check-circle' : 'fas fa-exclamation-circle';
+      const bgColor = type === 'success' ? 'var(--success-color)' : 'var(--danger-color)';
+      
+      toast.innerHTML = `<i class="${icon}"></i><span>${message}</span>`;
+      toast.style.background = `linear-gradient(135deg, ${bgColor}, ${bgColor}dd)`;
+      toast.classList.add('show');
+      
       setTimeout(() => {
-        toast.style.display = "none";
-      }, 2000);
+        toast.classList.remove('show');
+      }, 3000);
     }
 
+    // Update cart count in header
+    function updateCartCount() {
+      try {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+        const cartCount = document.getElementById('cartCount');
+        
+        if (cartCount) {
+          if (totalItems > 0) {
+            cartCount.textContent = totalItems;
+            cartCount.style.display = 'flex';
+          } else {
+            cartCount.style.display = 'none';
+          }
+        }
+      } catch (error) {
+        console.error('Error updating cart count:', error);
+      }
+    }
+
+    // Mobile menu toggle with animation
     function toggleMenu() {
       const navLinks = document.getElementById("navLinks");
+      const hamburger = document.querySelector('.hamburger');
+      
       navLinks.classList.toggle("show");
+      hamburger.classList.toggle('active');
+      
+      // Add hamburger animation
+      const spans = hamburger.querySelectorAll('span');
+      if (hamburger.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(7px, 7px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(7px, -7px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
     }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.querySelector('.hamburger');
+      
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove("show");
+        hamburger.classList.remove('active');
+        
+        const spans = hamburger.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Performance optimization: Intersection Observer for images
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+            imageObserver.unobserve(img);
+          }
+        }
+      });
+    });
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+      
+      // Observe all images for lazy loading
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
+      
+      // Add loading states to all buttons
+      document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', function() {
+          if (!this.disabled && this.classList.contains('add-to-cart-btn')) {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              this.style.transform = 'scale(1)';
+            }, 150);
+          }
+        });
+      });
+    });
+
+    // Error handling for cart operations
+    window.addEventListener('error', function(e) {
+      console.error('Application error:', e.error);
+      showToast('Something went wrong. Please try again.', 'error');
+    });
+
+    // Handle network status
+    window.addEventListener('online', () => {
+      showToast('Connection restored', 'success');
+    });
+
+    window.addEventListener('offline', () => {
+      showToast('You are offline', 'error');
+    });
   </script>
 </body>
 </html>

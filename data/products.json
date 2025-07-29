@@ -1,182 +1,452 @@
 [
   {
     "id": 1,
-    "name": "Ceiling Fan - Bajaj Maxima",
+    "name": "Ceiling Fan - Bajaj Maxima 48\"",
     "price": 1450,
-    "image": "images/fan1.jpg"
+    "image": "../images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif",
+    "category": "fans",
+    "brand": "Bajaj",
+    "description": "High-performance ceiling fan with aerodynamic blades for maximum air delivery and energy efficiency.",
+    "specifications": {
+      "size": "48 inches",
+      "material": "Steel",
+      "power": "75W",
+      "speed": "3 Speed"
+    }
   },
   {
     "id": 2,
-    "name": "Ceiling Fan - Crompton Aura",
+    "name": "Ceiling Fan - Crompton Aura Premium 52\"",
     "price": 1799,
-    "image": "images/fan2.jpg"
+    "image": "../images/hampton-bay-ceiling-fans-with-lights-52133-64_1000.webp",
+    "category": "fans",
+    "brand": "Crompton",
+    "description": "Premium ceiling fan with decorative design and superior air circulation for large rooms.",
+    "specifications": {
+      "size": "52 inches",
+      "material": "Metal",
+      "power": "85W",
+      "speed": "4 Speed"
+    }
   },
   {
     "id": 3,
-    "name": "LED Bulb - Philips 12W",
+    "name": "LED Bulb - Philips Essential 12W Cool White",
     "price": 150,
-    "image": "images/bulb1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "bulbs",
+    "brand": "Philips",
+    "description": "Energy-efficient LED bulb with long lifespan and instant brightness. Perfect for home and office use.",
+    "specifications": {
+      "wattage": "12W",
+      "lumens": "1200 lm",
+      "color_temperature": "6500K",
+      "lifespan": "15000 hours"
+    }
   },
   {
     "id": 4,
-    "name": "LED Tube Light - Wipro 20W",
+    "name": "LED Tube Light - Wipro Garnet 20W T8",
     "price": 280,
-    "image": "images/tube1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "bulbs",
+    "brand": "Wipro",
+    "description": "High-quality LED tube light with uniform light distribution and flicker-free operation.",
+    "specifications": {
+      "wattage": "20W",
+      "length": "4 feet",
+      "lumens": "2000 lm",
+      "color_temperature": "6500K"
+    }
   },
   {
     "id": 5,
-    "name": "Anchor Switchboard 3 Socket",
+    "name": "Anchor Switchboard 3 Socket Universal",
     "price": 230,
-    "image": "images/switch1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "switches",
+    "brand": "Anchor",
+    "description": "Durable 3-socket switchboard with universal compatibility and safety features.",
+    "specifications": {
+      "sockets": "3",
+      "rating": "16A",
+      "material": "Polycarbonate",
+      "safety": "ISI Certified"
+    }
   },
   {
     "id": 6,
-    "name": "Modular Switchboard - Havells",
+    "name": "Modular Switchboard - Havells Crabtree 6M",
     "price": 450,
-    "image": "images/switch2.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "switches",
+    "brand": "Havells",
+    "description": "Premium modular switchboard with elegant design and superior build quality.",
+    "specifications": {
+      "modules": "6",
+      "rating": "25A",
+      "material": "High-grade Plastic",
+      "finish": "Glossy White"
+    }
   },
   {
     "id": 7,
-    "name": "Electric Wire - Finolex 90m",
+    "name": "Electric Wire - Finolex Flame Retardant 90m",
     "price": 1450,
-    "image": "images/wire1.jpg"
+    "image": "../images/Wires.webp",
+    "category": "wires",
+    "brand": "Finolex",
+    "description": "High-quality flame retardant electric wire suitable for residential and commercial wiring.",
+    "specifications": {
+      "length": "90 meters",
+      "cross_section": "2.5 sq mm",
+      "insulation": "PVC",
+      "certification": "ISI Mark"
+    }
   },
   {
     "id": 8,
-    "name": "Electric Cable - Polycab 1.5 sqmm",
+    "name": "Electric Cable - Polycab FR 1.5 sqmm",
     "price": 960,
-    "image": "images/wire2.jpg"
+    "image": "../images/Wires.webp",
+    "category": "wires",
+    "brand": "Polycab",
+    "description": "Flexible electric cable with superior insulation and conductivity for safe electrical connections.",
+    "specifications": {
+      "cross_section": "1.5 sq mm",
+      "conductor": "Copper",
+      "insulation": "FRLS PVC",
+      "temperature_rating": "70°C"
+    }
   },
   {
     "id": 9,
-    "name": "Extension Board - 4 Socket",
+    "name": "Extension Board - Goldmedal G-Surge 4 Socket",
     "price": 320,
-    "image": "images/board1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "accessories",
+    "brand": "Goldmedal",
+    "description": "Multi-socket extension board with surge protection and individual switch control.",
+    "specifications": {
+      "sockets": "4",
+      "cord_length": "2 meters",
+      "surge_protection": "Yes",
+      "individual_switches": "Yes"
+    }
   },
   {
     "id": 10,
-    "name": "Electric Tester - Taparia",
+    "name": "Electric Tester - Taparia Phase Indicator",
     "price": 80,
-    "image": "images/tester1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "Taparia",
+    "description": "Reliable phase indicator tester for electrical troubleshooting and safety checks.",
+    "specifications": {
+      "voltage_range": "100-500V AC",
+      "type": "Non-contact",
+      "material": "Insulated Plastic",
+      "certification": "ISI"
+    }
   },
   {
     "id": 11,
-    "name": "Table Fan - Usha Mist Air",
+    "name": "Table Fan - Usha Mist Air Icy 16\"",
     "price": 1890,
-    "image": "images/fan3.jpg"
+    "image": "../images/commercial-electric-ceiling-fans-without-lights-ak366a-tm-64_1000.avif",
+    "category": "fans",
+    "brand": "Usha",
+    "description": "Compact table fan with mist function for personalized cooling experience.",
+    "specifications": {
+      "size": "16 inches",
+      "power": "50W",
+      "speeds": "3",
+      "special_feature": "Mist Function"
+    }
   },
   {
     "id": 12,
-    "name": "Rechargeable LED Lantern",
+    "name": "Rechargeable LED Lantern - Eveready HL52",
     "price": 999,
-    "image": "images/lantern1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "bulbs",
+    "brand": "Eveready",
+    "description": "Portable rechargeable LED lantern with long backup time, perfect for emergencies.",
+    "specifications": {
+      "battery": "Lead Acid",
+      "backup_time": "8-10 hours",
+      "charging_time": "10-12 hours",
+      "brightness": "Hi/Lo modes"
+    }
   },
   {
     "id": 13,
-    "name": "Spike Guard 6 Socket",
+    "name": "Spike Guard 6 Socket - GM Modular",
     "price": 420,
-    "image": "images/spike1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "accessories",
+    "brand": "GM",
+    "description": "6-socket spike guard with LED indicator and master switch for complete power protection.",
+    "specifications": {
+      "sockets": "6",
+      "surge_protection": "2500 Joules",
+      "cord_length": "1.5 meters",
+      "indicator": "LED"
+    }
   },
   {
     "id": 14,
-    "name": "Electrical Tape - Black",
+    "name": "Electrical Tape - 3M Scotch Super 88",
     "price": 20,
-    "image": "images/tape1.jpg"
+    "image": "../images/Wires.webp",
+    "category": "accessories",
+    "brand": "3M",
+    "description": "Premium vinyl electrical tape for insulating and protecting electrical connections.",
+    "specifications": {
+      "width": "19mm",
+      "length": "20 meters",
+      "material": "Vinyl",
+      "temperature_range": "-18°C to 105°C"
+    }
   },
   {
     "id": 15,
-    "name": "LED Bulb - Syska 9W",
+    "name": "LED Bulb - Syska SSK 9W Warm White",
     "price": 120,
-    "image": "images/bulb2.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "bulbs",
+    "brand": "Syska",
+    "description": "Energy-efficient LED bulb with warm white light, ideal for creating cozy ambiance.",
+    "specifications": {
+      "wattage": "9W",
+      "lumens": "900 lm",
+      "color_temperature": "3000K",
+      "base": "B22"
+    }
   },
   {
     "id": 16,
-    "name": "Modular Socket - GM",
+    "name": "Modular Socket - GM 16A Universal",
     "price": 115,
-    "image": "images/socket1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "switches",
+    "brand": "GM",
+    "description": "Universal modular socket compatible with all plug types, built for durability.",
+    "specifications": {
+      "rating": "16A",
+      "type": "Universal",
+      "material": "Polycarbonate",
+      "color": "White"
+    }
   },
   {
     "id": 17,
-    "name": "Conduit Pipe - 25mm",
+    "name": "Conduit Pipe - Precision PVC 25mm",
     "price": 75,
-    "image": "images/pipe1.jpg"
+    "image": "../images/Wires.webp",
+    "category": "accessories",
+    "brand": "Precision",
+    "description": "Rigid PVC conduit pipe for protecting electrical wiring in walls and structures.",
+    "specifications": {
+      "diameter": "25mm",
+      "length": "3 meters",
+      "material": "PVC",
+      "type": "Rigid"
+    }
   },
   {
     "id": 18,
-    "name": "Circuit Breaker - Havells MCB",
+    "name": "Circuit Breaker - Havells MCB 32A Single Pole",
     "price": 430,
-    "image": "images/mcb1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "switches",
+    "brand": "Havells",
+    "description": "Miniature Circuit Breaker for overload and short circuit protection.",
+    "specifications": {
+      "rating": "32A",
+      "poles": "Single Pole",
+      "breaking_capacity": "10kA",
+      "type": "C Curve"
+    }
   },
   {
     "id": 19,
-    "name": "MCB Box - 4 Way",
+    "name": "MCB Box - Standard Metal 4 Way",
     "price": 630,
-    "image": "images/mcbbox1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "switches",
+    "brand": "Standard",
+    "description": "4-way MCB distribution box with sturdy metal construction for electrical panel setup.",
+    "specifications": {
+      "ways": "4",
+      "material": "Metal",
+      "mounting": "Surface",
+      "door_type": "Hinged"
+    }
   },
   {
     "id": 20,
-    "name": "Wire Stripper Tool",
+    "name": "Wire Stripper Tool - Stanley Professional",
     "price": 270,
-    "image": "images/stripper1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "Stanley",
+    "description": "Professional wire stripper tool for precise wire cutting and stripping operations.",
+    "specifications": {
+      "wire_range": "10-24 AWG",
+      "material": "Hardened Steel",
+      "grip": "Ergonomic",
+      "type": "Multi-purpose"
+    }
   },
   {
     "id": 21,
-    "name": "Smart Plug - 10A WiFi",
+    "name": "Smart Plug - TP-Link Kasa 10A WiFi",
     "price": 1550,
-    "image": "images/smartplug1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "accessories",
+    "brand": "TP-Link",
+    "description": "WiFi-enabled smart plug for remote control and automation of electrical devices.",
+    "specifications": {
+      "rating": "10A",
+      "connectivity": "WiFi 2.4GHz",
+      "app_control": "Kasa App",
+      "voice_control": "Alexa, Google"
+    }
   },
   {
     "id": 22,
-    "name": "LED Panel Light - 12W",
+    "name": "LED Panel Light - Wipro Garnet 12W Square",
     "price": 420,
-    "image": "images/panel1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "bulbs",
+    "brand": "Wipro",
+    "description": "Sleek LED panel light with uniform illumination, perfect for modern interiors.",
+    "specifications": {
+      "wattage": "12W",
+      "shape": "Square",
+      "size": "6 inches",
+      "color_temperature": "6500K"
+    }
   },
   {
     "id": 23,
-    "name": "Mini Inverter - Luminous",
+    "name": "Mini Inverter - Luminous Zelio 1100VA",
     "price": 3590,
-    "image": "images/inverter1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "Luminous",
+    "description": "Compact sine wave inverter with intelligent battery management and overload protection.",
+    "specifications": {
+      "capacity": "1100VA/12V",
+      "wave_form": "Pure Sine Wave",
+      "battery_type": "Tubular",
+      "changeover_time": "10ms"
+    }
   },
   {
     "id": 24,
-    "name": "Electric Choke - Copper",
+    "name": "Electric Choke - Copper Core 40W",
     "price": 150,
-    "image": "images/choke1.jpg"
+    "image": "../images/Wires.webp",
+    "category": "accessories",
+    "brand": "Generic",
+    "description": "High-quality copper core choke for fluorescent tube light ballast applications.",
+    "specifications": {
+      "power": "40W",
+      "core_material": "Copper",
+      "insulation_class": "A",
+      "mounting": "Bracket"
+    }
   },
   {
     "id": 25,
-    "name": "Fan Regulator - Anchor",
+    "name": "Fan Regulator - Anchor Roma 100W",
     "price": 130,
-    "image": "images/regulator1.jpg"
+    "image": "../images/Switchboards.avif",
+    "category": "switches",
+    "brand": "Anchor",
+    "description": "Electronic fan speed regulator with smooth speed control and energy efficiency.",
+    "specifications": {
+      "power": "100W",
+      "type": "Electronic",
+      "steps": "Stepless",
+      "mounting": "Modular"
+    }
   },
   {
     "id": 26,
-    "name": "Light Holder - B22",
+    "name": "Light Holder - B22 Bakelite",
     "price": 45,
-    "image": "images/holder1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "Generic",
+    "description": "Standard B22 bayonet bulb holder made from heat-resistant bakelite material.",
+    "specifications": {
+      "base_type": "B22",
+      "material": "Bakelite",
+      "rating": "250V, 2A",
+      "temperature_rating": "120°C"
+    }
   },
   {
     "id": 27,
-    "name": "Soldering Iron - 60W",
+    "name": "Soldering Iron - Weller Professional 60W",
     "price": 310,
-    "image": "images/solder1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "Weller",
+    "description": "Professional soldering iron with temperature control for precision electronic work.",
+    "specifications": {
+      "power": "60W",
+      "temperature_range": "200-480°C",
+      "tip_type": "Interchangeable",
+      "cord_length": "1.5 meters"
+    }
   },
   {
     "id": 28,
-    "name": "Digital Multimeter",
+    "name": "Digital Multimeter - Fluke 101 Basic",
     "price": 1250,
-    "image": "images/multimeter1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "Fluke",
+    "description": "Professional digital multimeter for accurate electrical measurements and troubleshooting.",
+    "specifications": {
+      "display": "Digital LCD",
+      "ac_voltage": "600V",
+      "dc_voltage": "600V",
+      "resistance": "40MΩ"
+    }
   },
   {
     "id": 29,
-    "name": "Insulated Gloves - Electric Safe",
+    "name": "Insulated Gloves - 3M Comfort Grip 11kV",
     "price": 220,
-    "image": "images/glove1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "3M",
+    "description": "Electrical safety gloves with high voltage protection and comfort grip design.",
+    "specifications": {
+      "voltage_rating": "11kV",
+      "material": "Natural Rubber",
+      "length": "36cm",
+      "standard": "IEC 60903"
+    }
   },
   {
     "id": 30,
-    "name": "Electrical Screwdriver Kit",
+    "name": "Electrical Screwdriver Kit - Stanley 6-Piece",
     "price": 580,
-    "image": "images/screwkit1.jpg"
+    "image": "../images/61htYg6TZiL.jpg",
+    "category": "accessories",
+    "brand": "Stanley",
+    "description": "Complete insulated screwdriver set for electrical work with VDE certification.",
+    "specifications": {
+      "pieces": "6",
+      "insulation": "VDE 1000V",
+      "handle": "Bi-material",
+      "sizes": "Various Phillips & Flathead"
+    }
   }
 ]
